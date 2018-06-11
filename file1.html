@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page1</title>
+</head>
+<body>    
+  <form action='mphp.php' method='POST'>
+  	<label>Enter paper number</label>
+  		<input type="text" name="numb" placeholder="Enter paper number..">
+<p>How many authors :</p>
+<select id="authors" name="authors">
+  <option value ="1">1</option>
+  <option value ="2">2</option>
+  <option value ="3">3</option>
+  <option value ="4">4</option>
+  <option value ="5">5</option>
+</select>
+<p>Click on add to enter names of authors </p>
+<button type="button" onclick="add()">Add authors.. </button>
+<p id="demo"></p>
+
+<script type="text/javascript">
+function add() {
+    var x = document.getElementById("authors").value;
+    var t;
+    var arr=[];
+    for(var m=0;m<x;m++){
+    	arr[m]=m;
+      t = document.createElement("INPUT");
+    t.setAttribute("type","text");
+    t.setAttribute("name",arr[m]);
+    document.getElementById("demo").appendChild(t);
+    }
+    }
+</script>
+
+<p>Presentation status :</p>
+<select id="pres" name="pres">
+  <option value = 'Presented'>Presented</option>
+  <option value = 'Not-Presented'>Not-Presented</option>
+</select>
+<p>-----------------------------------------------------------------------</p>
+	<p>If Presented,enter name and link of online presentation:</p>
+	<p>Presented by:</p>
+	<input type="text" name="name" placeholder="Enter person's name..">
+	<p>Link of online publication :</p>
+	<input type="text" name="link" placeholder="Enter link..">
+	<p>Click to save info</p>
+	<input type="submit" value="Save info" >
+</form>
+</body>
+</html>
